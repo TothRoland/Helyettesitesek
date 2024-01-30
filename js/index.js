@@ -17,9 +17,9 @@ function hide(){
     let jelszoInputType = document.getElementById("jelszo");
     if(kepSRC.getAttribute('src') == "../images/unhidePassword.png"){
         kepSRC.setAttribute('src', '../images/hidePassword.png');
-        jelszoInputType.setAttribute('type', 'text');
+        jelszoInputType.setAttribute('type', 'password');
     } else{
         kepSRC.setAttribute('src', '../images/unhidePassword.png');
-        jelszoInputType.setAttribute('type', 'password');
+        jelszoInputType.setAttribute('type', 'text');
     }
 }

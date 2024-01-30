@@ -1,0 +1,102 @@
+{
+    "osztalyok": {
+        "10.A": {
+            "(6)": "12:25-13:10, 10.AB német1: Német nyelv - Bagosiné Siska Vera, Elmarad",
+            "(7 - 8)": "13:20-15:00, 10.A 2.: Magyar nyelv és irodalom - Simonyi Antónia Ilona, Elmarad"
+        },
+        "10.B": {
+            "(1)": "7:45-8:30, 10.B 1.: Matematika - Gerő Ildikó, Elmarad, 3. órában",
+            "(2)": "8:40-9:25, 10.B 1.: Magyar nyelv és irodalom - Simonyi Antónia Ilona, Elmarad",
+            "3": "9:35-10:20, 10.B 1.: (Magyar nyelv és irodalom) ➔ Matematika - Helyettesítés: (Simonyi Antónia Ilona) ➔ Gerő Ildikó, 1. óra 3-ban",
+            "(6)": "12:25-13:10, 10.AB német1: Német nyelv - Bagosiné Siska Vera, Elmarad",
+            "(7)": "13:20-14:05, Biológia - Nagy Kinga, Elmarad"
+        },
+        "10.D": {
+            "3": "9:35-10:20, 10.DE német2: Német nyelv - Helyettesítés: (Bagosiné Siska Vera) ➔ Szigetiné Kerekes Boglárka Eszter",
+            "5": "11:30-12:15, 10.D 1.: Magyar nyelv és irodalom - Tanár: Steinmacher Dóra, Tanterem-változtatás: (H 011) ➔ L 105"
+        },
+        "10.E": {
+            "3": "9:35-10:20, 10.DE német2: Német nyelv - Helyettesítés: (Bagosiné Siska Vera) ➔ Szigetiné Kerekes Boglárka Eszter"
+        },
+        "10.G": {
+            "3": "9:35-10:20, 10.G angolos: Matematika - +Tekes István, Tanár: *165, Tanterem-változtatás: (H 010) ➔ F 024 - Aut, TEREMCSERE",
+            "5": "11:30-12:15, 10.G angolos: Magyar nyelv és irodalom - Moved from period: 7, Tanár: Terray-Sógor Csilla, Tanterem-változtatás: (F 118) ➔ F 024",
+            "(5 - 6)": "11:30-13:10, Testnevelés - Somogyi Zsuzsanna, Elmarad",
+            "(7)": "13:20-14:05, 10.G németes: Matematika - Berzsenyi Mónika Edit, Elmarad"
+        },
+        "11.A": {
+            "6": "12:25-13:10, Vegyipari műszaki feladatok - Helyettesítés: (Dr. Naszer Heider) ➔ Merencsics Tibor Istvánné Rigó Ida Eszter"
+        },
+        "11.B": {
+            "2": "8:40-9:25, 11.BF angol3: Angol nyelv - Helyettesítés: (Simon Emőke) ➔ Freili Katalin",
+            "3": "9:35-10:20, Osztályfőnöki - Helyettesítés: (Kalocsai-Nagy Izabella) ➔ Vargáné Wolf Andrea"
+        },
+        "11.C": {
+            "3": "9:35-10:20, 11.C 2.: Angol nyelv - Helyettesítés: (Simon Emőke) ➔ Ferencziné Rohonyi Judit",
+            "(6)": "12:25-13:10, Osztályfőnöki - Simon Emőke, Elmarad"
+        },
+        "11.D": {
+            "4": "10:30-11:15, 11.D mat közép4: Matematika - Helyettesítés: (Nagy Kinga) ➔ Biszkótné Csiszár Gyöngyi",
+            "5": "11:30-12:15, 11.D mat közép4: Matematika - Helyettesítés: (Nagy Kinga) ➔ Turi Zsuzsanna"
+        },
+        "11.F": {
+            "2": "8:40-9:25, 11.BF angol3: Angol nyelv - Helyettesítés: (Simon Emőke) ➔ Freili Katalin",
+            "(6)": "12:25-13:10, 11.F (m) : Anyag- és gyártmányismeret - Sárdi Ildikó Mónika, Elmarad",
+            "(7)": "13:20-14:05, Testnevelés - Engel-Angyal Zsolt, Elmarad"
+        },
+        "11.G": {
+            "4": "10:30-11:15, 11.G mat közép6: Matematika - Helyettesítés: (Berzsenyi Mónika Edit) ➔ Földesi Csaba",
+            "5": "11:30-12:15, 11.G mat közép6: Matematika - Helyettesítés: (Berzsenyi Mónika Edit) ➔ Ács Krisztina"
+        },
+        "12.B": {
+            "1": "7:45-8:30, 12.B angol3: Angol nyelv - Tanár: Szathmáry Edina, Tanterem-változtatás: (H 010) ➔ F 115, TEREMCSERE",
+            "2": "8:40-9:25, 12.BE mat közép20: Matematika - Helyettesítés: (Nagy Kinga) ➔ Medve Krisztina Violetta",
+            "4": "10:30-11:15, (Pénzügyi és vállalkozói ismeretek) ➔ Testnevelés - Helyettesítés: (Kalocsai-Nagy Izabella) ➔ Molnár Csaba, Tanterem-változtatás: (H 010) ➔ F 109 - T",
+            "5": "11:30-12:15, (Anyagismeret) ➔ Osztályfőnöki - Helyettesítés: (Dr. Naszer Heider) ➔ Molnár Csaba, Tanterem-változtatás: (H 010) ➔ L 006"
+        },
+        "12.C": {
+            "4 - 5": "10:30-12:15, 12.C 1.H: Szoftvertesztelés - Helyettesítés: ([BTA2] Betöltetlen informatika) ➔ Farkas Gábor",
+            "6 - 7": "12:25-14:05, 12.C magy alap2: Magyar nyelv és irodalom - Tanár: Kozák Emília Katalin, Tanterem-változtatás: (H 010) ➔ F 118"
+        },
+        "12.E": {
+            "2": "8:40-9:25, 12.BE mat közép20: Matematika - Helyettesítés: (Nagy Kinga) ➔ Medve Krisztina Violetta",
+            "6": "12:25-13:10, 12.E magy alap4: Magyar nyelv és irodalom - Tanár: Biszkótné Csiszár Gyöngyi, Tanterem-változtatás: (H 011) ➔ F 115"
+        },
+        "12.G": {
+            "2": "8:40-9:25, 12.G mat közép50: Matematika - Helyettesítés: (Berzsenyi Mónika Edit) ➔ Bede Mónika"
+        },
+        "5/13.A": {
+            "(1)": "7:45-8:30, 5/13.A német1: Foglalkoztatás I. - Bagosiné Siska Vera, Elmarad",
+            "2": "8:40-9:25, Vegyipari biztonság - Tanár: Bácskay-Kiss Judit Cecília, Tanterem-változtatás: (H 011) ➔ L 013",
+            "3": "9:35-10:20, Vegyipari technológia - Tanár: Kissné Németh Enikő, Tanterem-változtatás: (H 011) ➔ F 015",
+            "4": "10:30-11:15, 5/13.A angol2: Angol nyelv - Tanár: Freili Katalin, Tanterem-változtatás: (H 011) ➔ F 024",
+            "(4)": "10:30-11:15, 5/13.A német2: Német nyelv - Bagosiné Siska Vera, Elmarad"
+        },
+        "9.A": {
+            "(1 - 2)": "7:45-9:25, 9.ADE 4.: Úszás - Somogyi Zsuzsanna, Elmarad"
+        },
+        "9.B": {
+            "2 - 4": "8:40-11:15, 9.B 1.F: Természettudományos vizsgálatok - Helyettesítés: (Dr. Naszer Heider) ➔ Bata Veronika, Tanterem-változtatás: (L 005) ➔ F 205, TEREMCSERE",
+            "5": "11:30-12:15, 9.B angol2: Angol nyelv - Helyettesítés: (Simon Emőke) ➔ Veres Enikő Éva"
+        },
+        "9.C": {
+            "(1)": "7:45-8:30, Munkavállalói ismeretek - Dr. Naszer Heider, Elmarad",
+            "(2)": "8:40-9:25, Komplex természettudomány földrajz - Kalocsai-Nagy Izabella, Elmarad"
+        },
+        "9.D": {
+            "(1 - 2)": "7:45-9:25, 9.ADE 4.: Úszás - Somogyi Zsuzsanna, Elmarad",
+            "(7)": "13:20-14:05, 9.DE angol5: Angol nyelv - Simon Emőke, Elmarad"
+        },
+        "9.E": {
+            "(1 - 2)": "7:45-9:25, 9.ADE 4.: Úszás - Somogyi Zsuzsanna, Elmarad",
+            "(7)": "13:20-14:05, 9.DE angol5: Angol nyelv - Simon Emőke, Elmarad"
+        },
+        "9.G": {
+            "4": "10:30-11:15, 9.G németes: Angol nyelv - Tanár: Németh-Siffer Anikó, Tanterem-változtatás: (F 205) ➔ L 105"
+        },
+        "9.Ny": {
+            "(2)": "8:40-9:25, Osztályfőnöki - Bagosiné Siska Vera, Elmarad",
+            "(7)": "13:20-14:05, 9.Ny németes: Német nyelv - Bagosiné Siska Vera, Elmarad"
+        }
+    }
+}

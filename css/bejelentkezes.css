@@ -44,3 +44,9 @@
 #sidePanel a:hover {
     background-color: #555;
 }
+
+@media (max-width: 1024px) {
+    #sidePanel {
+        visibility: hidden;
+    }
+}
