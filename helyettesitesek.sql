@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Jan 31. 19:03
+-- Létrehozás ideje: 2024. Feb 04. 14:53
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -64,6 +64,45 @@ CREATE TABLE `osztalyok` (
   `id` int(2) NOT NULL,
   `osztalynev` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `osztalyok`
+--
+
+INSERT INTO `osztalyok` (`id`, `osztalynev`) VALUES
+(1, '9.A'),
+(2, '9.B'),
+(3, '9.C'),
+(4, '9.D'),
+(5, '9.E'),
+(6, '9.G'),
+(7, '9.Ny'),
+(8, '10.A'),
+(9, '10.B'),
+(10, '10.C'),
+(11, '10.D'),
+(12, '10.E'),
+(13, '10.G'),
+(14, '11.A'),
+(15, '11.B'),
+(16, '11.C'),
+(17, '11.D'),
+(18, '11.E'),
+(19, '11.F'),
+(20, '11.G'),
+(21, '12.A'),
+(22, '12.B'),
+(23, '12.C'),
+(24, '12.D'),
+(25, '12.E'),
+(26, '12.F'),
+(27, '12.G'),
+(28, '13.A'),
+(29, '13.B'),
+(30, '13.C'),
+(31, '13.D'),
+(32, '13.E'),
+(33, '13.G');
 
 -- --------------------------------------------------------
 
@@ -193,7 +232,17 @@ INSERT INTO `tanarok` (`id`, `tanarnev`) VALUES
 -- A tábla indexei `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `osztalyId` (`osztalyId`),
+  ADD KEY `tanarId` (`tanarId`);
+
+--
+-- A tábla indexei `helyettesites`
+--
+ALTER TABLE `helyettesites`
+  ADD KEY `osztalyId` (`osztalyId`),
+  ADD KEY `tanarId1` (`tanarId1`),
+  ADD KEY `tanarId2` (`tanarId2`);
 
 --
 -- A tábla indexei `osztalyok`
@@ -221,13 +270,32 @@ ALTER TABLE `felhasznalok`
 -- AUTO_INCREMENT a táblához `osztalyok`
 --
 ALTER TABLE `osztalyok`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT a táblához `tanarok`
 --
 ALTER TABLE `tanarok`
   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+
+--
+-- Megkötések a kiírt táblákhoz
+--
+
+--
+-- Megkötések a táblához `felhasznalok`
+--
+ALTER TABLE `felhasznalok`
+  ADD CONSTRAINT `felhasznalok_ibfk_1` FOREIGN KEY (`osztalyId`) REFERENCES `osztalyok` (`id`),
+  ADD CONSTRAINT `felhasznalok_ibfk_2` FOREIGN KEY (`tanarId`) REFERENCES `tanarok` (`id`);
+
+--
+-- Megkötések a táblához `helyettesites`
+--
+ALTER TABLE `helyettesites`
+  ADD CONSTRAINT `helyettesites_ibfk_1` FOREIGN KEY (`osztalyId`) REFERENCES `osztalyok` (`id`),
+  ADD CONSTRAINT `helyettesites_ibfk_2` FOREIGN KEY (`tanarId1`) REFERENCES `tanarok` (`id`),
+  ADD CONSTRAINT `helyettesites_ibfk_3` FOREIGN KEY (`tanarId2`) REFERENCES `tanarok` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

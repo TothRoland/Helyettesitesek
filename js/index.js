@@ -1,25 +1,26 @@
-document.getElementById("bejelentkezes").addEventListener("click", login);
-async function login(){
-    let settings = {
-        method : "POST",
-        body : JSON.stringify({
-            "jelszo" : document.getElementById("jelszo").value
-        })
-    }
-    let response = await fetch("../php/index.php/login", settings);
+document.getElementById("tanarok").addEventListener("click", tanarok);
+async function tanarok(){
+    let response = await fetch("php/index.php/osszesTanar");
     let data = await response.json();
-    console.log(data);
+
+    for(let item of data){
+        document.getElementById("eredm").innerHTML+='<p id="'+item.id+'">'+item.tanarnev+'</p>';
+    }
 }
 
-document.getElementById("jelszoHide").addEventListener("click", hide);
-function hide(){
-    let kepSRC = document.getElementById("hideImage");
-    let jelszoInputType = document.getElementById("jelszo");
-    if(kepSRC.getAttribute('src') == "../images/unhidePassword.png"){
-        kepSRC.setAttribute('src', '../images/hidePassword.png');
-        jelszoInputType.setAttribute('type', 'password');
-    } else{
-        kepSRC.setAttribute('src', '../images/unhidePassword.png');
-        jelszoInputType.setAttribute('type', 'text');
+/*document.getElementById("tanarok").addEventListener("click", osztalyok);
+async function osztalyok(){
+    for (let i = 9; i < 14; i++){
+        for (let j = 0; j < 14; j++)
+        let settings = {
+            method : "POST",
+            body : JSON.stringify({
+                "id" : i,
+                "osztalynev" : ""
+            })
+        }
+        let response = await fetch("php/index.php/osztalyfeltolt", settings);
+        let data = await response.json();
+        console.log(data);
     }
-}
+}*/

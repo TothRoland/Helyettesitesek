@@ -1,0 +1,12 @@
+#regisztracioDiv {
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px 5px;
+    width: 50%;
+    margin: 10% auto;
+    padding: 30px;
+}
+
+#hideImage {
+    width: 20px;
+}
