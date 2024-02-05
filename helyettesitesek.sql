@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Feb 04. 14:53
+-- Létrehozás ideje: 2024. Feb 05. 17:34
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `helyettesitesek`
 --
+CREATE DATABASE IF NOT EXISTS `helyettesitesek` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
+USE `helyettesitesek`;
 
 -- --------------------------------------------------------
 
@@ -32,9 +34,8 @@ CREATE TABLE `felhasznalok` (
   `felhasznalonev` varchar(30) NOT NULL,
   `email` varchar(100) NOT NULL,
   `jelszo` varchar(60) NOT NULL,
-  `osztalyId` int(2) NOT NULL,
-  `tanarId` int(2) NOT NULL,
-  `ertesites` tinyint(1) NOT NULL
+  `osztalyId` int(11) NOT NULL,
+  `tanarId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 -- --------------------------------------------------------
@@ -44,10 +45,10 @@ CREATE TABLE `felhasznalok` (
 --
 
 CREATE TABLE `helyettesites` (
-  `ora` int(1) NOT NULL,
-  `osztalyId` int(2) NOT NULL,
-  `tanarId1` int(2) NOT NULL,
-  `tanarId2` int(2) NOT NULL,
+  `ora` int(11) NOT NULL,
+  `osztalyId` int(11) NOT NULL,
+  `tanarId1` int(11) NOT NULL,
+  `tanarId2` int(11) NOT NULL,
   `tantargy1` varchar(30) NOT NULL,
   `tantargy2` varchar(30) NOT NULL,
   `terem1` varchar(5) NOT NULL,
@@ -61,7 +62,7 @@ CREATE TABLE `helyettesites` (
 --
 
 CREATE TABLE `osztalyok` (
-  `id` int(2) NOT NULL,
+  `id` int(11) NOT NULL,
   `osztalynev` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
@@ -111,7 +112,7 @@ INSERT INTO `osztalyok` (`id`, `osztalynev`) VALUES
 --
 
 CREATE TABLE `tanarok` (
-  `id` int(2) NOT NULL,
+  `id` int(11) NOT NULL,
   `tanarnev` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
@@ -270,13 +271,13 @@ ALTER TABLE `felhasznalok`
 -- AUTO_INCREMENT a táblához `osztalyok`
 --
 ALTER TABLE `osztalyok`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT a táblához `tanarok`
 --
 ALTER TABLE `tanarok`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- Megkötések a kiírt táblákhoz

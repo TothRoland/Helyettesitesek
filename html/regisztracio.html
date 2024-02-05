@@ -35,18 +35,45 @@
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Felhasználónév" aria-label="Username" aria-describedby="basic-addon1" id="felhasznalonev" minlength="5" maxlength="30">
         </div>
+
+        <h5>Email</h5>
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Email cím" aria-label="Email" aria-describedby="basic-addon1" id="email">
+        </div>
+
+        <h5>Szerepkör</h5>
+        <div class="input-group mb-3">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="szerep" id="tanar" value="tanar">
+                <label class="form-check-label" for="tanar">Tanár</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="szerep" id="diak" value="diak">
+                <label class="form-check-label" for="diak">Diák</label>
+            </div>
+        </div>
+
+        <h5>Egyéb szerepkör</h5>
+        <div class="input-group mb-3">
+            <select class="form-select" aria-label="Szerepkör" id="szerepkor">
+                <option selected disabled></option>
+            </select>
+        </div>
+
         <h5>Jelszó</h5>
         <div class="input-group mb-3">
             <input type="password" class="form-control" placeholder="Jelszó" aria-label="Password" aria-describedby="basic-addon1" id="jelszo" minlength="8" maxlength="30">
             <button class="btn btn-outline-secondary" type="button" id="jelszoHide"><img src="../images/hidePassword.png" id="hideImage"></button>
         </div>
+
         <h5>Jelszó megerősítése</h5>
         <div class="input-group mb-3">
             <input type="password" class="form-control" placeholder="Jelszó" aria-label="Password" aria-describedby="basic-addon1" id="jelszo" minlength="8" maxlength="30">
             <button class="btn btn-outline-secondary" type="button" id="jelszoHide"><img src="../images/hidePassword.png" id="hideImage"></button>
         </div>
-        <button type="button" class="btn btn-primary" id="bejelentkezes"><h3>Bejelentkezés</h3></button>
-        <a href=""><h5 id="regisztracioHivatkozas">Regisztráció</h5></a>
+
+        <button type="button" class="btn btn-primary" id="bejelentkezes"><h3>Regisztráció</h3></button>
+        <br><span>Ha már rendelkezel fiókkal, akkor a következő linken tudsz bejelentkezni:</span><a href="./bejelentkezes.html"><h5 id="regisztracioHivatkozas">Bejelentkezés</h5></a>
     </div>
 
     <script src="../js/regisztracio.js"></script>
