@@ -1,12 +1,18 @@
-document.getElementById("bejelentkezes").addEventListener("click", login);
-async function login(){
+document.getElementById("bejelentkezes").addEventListener("click", bejelentkezes);
+async function bejelentkezes(){
+    if(document.getElementById("felhasznalonev").value == "" || document.getElementById("jelszo").value == ""){
+        alert("Nem adtad meg felhasználónévét vagy jelszavát!");
+        return;
+    }
+
     let settings = {
         method : "POST",
         body : JSON.stringify({
+            "felhasznalonev" : document.getElementById("felhasznalonev").value,
             "jelszo" : document.getElementById("jelszo").value
         })
     }
-    let response = await fetch("../php/index.php/login", settings);
+    let response = await fetch("../php/index.php/bejelentkezes", settings);
     let data = await response.json();
     console.log(data);
 }

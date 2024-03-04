@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Feb 05. 17:34
+-- Létrehozás ideje: 2024. Már 03. 17:53
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `helyettesitesek`
 --
+DROP DATABASE IF EXISTS `helyettesitesek`;
 CREATE DATABASE IF NOT EXISTS `helyettesitesek` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
 USE `helyettesitesek`;
 
@@ -29,14 +30,28 @@ USE `helyettesitesek`;
 -- Tábla szerkezet ehhez a táblához `felhasznalok`
 --
 
-CREATE TABLE `felhasznalok` (
-  `id` int(5) NOT NULL,
+DROP TABLE IF EXISTS `felhasznalok`;
+CREATE TABLE IF NOT EXISTS `felhasznalok` (
+  `id` int(5) NOT NULL AUTO_INCREMENT,
   `felhasznalonev` varchar(30) NOT NULL,
   `email` varchar(100) NOT NULL,
   `jelszo` varchar(60) NOT NULL,
   `osztalyId` int(11) NOT NULL,
-  `tanarId` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+  `tanarId` int(11) NOT NULL,
+  `verify` varchar(40) DEFAULT NULL,
+  `role` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `osztalyId` (`osztalyId`),
+  KEY `tanarId` (`tanarId`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `felhasznalok`
+--
+
+INSERT INTO `felhasznalok` (`id`, `felhasznalonev`, `email`, `jelszo`, `osztalyId`, `tanarId`, `verify`, `role`) VALUES
+(0, 'admin', '13c-toth@ipari.vein.hu', '$2y$10$kAkLFZkJVTMpeCcsxGIThO3AlZ.alQePkAJYSL.scApXJRcvewYO.', 0, 0, NULL, 1),
+(3, 'TothRoland', 'tothroli1024@gmail.com', '$2y$10$A8y/zVfHc1MscvD7iVlQR.ppReROEGdTix4WpEdIHc89rBLdNqk8S', 30, 0, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -44,7 +59,8 @@ CREATE TABLE `felhasznalok` (
 -- Tábla szerkezet ehhez a táblához `helyettesites`
 --
 
-CREATE TABLE `helyettesites` (
+DROP TABLE IF EXISTS `helyettesites`;
+CREATE TABLE IF NOT EXISTS `helyettesites` (
   `ora` int(11) NOT NULL,
   `osztalyId` int(11) NOT NULL,
   `tanarId1` int(11) NOT NULL,
@@ -52,7 +68,10 @@ CREATE TABLE `helyettesites` (
   `tantargy1` varchar(30) NOT NULL,
   `tantargy2` varchar(30) NOT NULL,
   `terem1` varchar(5) NOT NULL,
-  `terem2` varchar(5) NOT NULL
+  `terem2` varchar(5) NOT NULL,
+  KEY `osztalyId` (`osztalyId`),
+  KEY `tanarId1` (`tanarId1`),
+  KEY `tanarId2` (`tanarId2`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 -- --------------------------------------------------------
@@ -61,16 +80,19 @@ CREATE TABLE `helyettesites` (
 -- Tábla szerkezet ehhez a táblához `osztalyok`
 --
 
-CREATE TABLE `osztalyok` (
-  `id` int(11) NOT NULL,
-  `osztalynev` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+DROP TABLE IF EXISTS `osztalyok`;
+CREATE TABLE IF NOT EXISTS `osztalyok` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `osztalynev` varchar(5) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `osztalyok`
 --
 
 INSERT INTO `osztalyok` (`id`, `osztalynev`) VALUES
+(0, ''),
 (1, '9.A'),
 (2, '9.B'),
 (3, '9.C'),
@@ -111,16 +133,19 @@ INSERT INTO `osztalyok` (`id`, `osztalynev`) VALUES
 -- Tábla szerkezet ehhez a táblához `tanarok`
 --
 
-CREATE TABLE `tanarok` (
-  `id` int(11) NOT NULL,
-  `tanarnev` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+DROP TABLE IF EXISTS `tanarok`;
+CREATE TABLE IF NOT EXISTS `tanarok` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tanarnev` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `tanarok`
 --
 
 INSERT INTO `tanarok` (`id`, `tanarnev`) VALUES
+(0, ''),
 (1, 'Irányi László'),
 (2, 'Grezsu Csaba'),
 (3, 'Podmaniczki Anna'),
@@ -224,60 +249,6 @@ INSERT INTO `tanarok` (`id`, `tanarnev`) VALUES
 (101, 'Vass Bence'),
 (102, 'Vojcskóné Juhász Sarolta'),
 (103, 'Wéninger Zoárd');
-
---
--- Indexek a kiírt táblákhoz
---
-
---
--- A tábla indexei `felhasznalok`
---
-ALTER TABLE `felhasznalok`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `osztalyId` (`osztalyId`),
-  ADD KEY `tanarId` (`tanarId`);
-
---
--- A tábla indexei `helyettesites`
---
-ALTER TABLE `helyettesites`
-  ADD KEY `osztalyId` (`osztalyId`),
-  ADD KEY `tanarId1` (`tanarId1`),
-  ADD KEY `tanarId2` (`tanarId2`);
-
---
--- A tábla indexei `osztalyok`
---
-ALTER TABLE `osztalyok`
-  ADD PRIMARY KEY (`id`);
-
---
--- A tábla indexei `tanarok`
---
-ALTER TABLE `tanarok`
-  ADD PRIMARY KEY (`id`);
-
---
--- A kiírt táblák AUTO_INCREMENT értéke
---
-
---
--- AUTO_INCREMENT a táblához `felhasznalok`
---
-ALTER TABLE `felhasznalok`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT a táblához `osztalyok`
---
-ALTER TABLE `osztalyok`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
-
---
--- AUTO_INCREMENT a táblához `tanarok`
---
-ALTER TABLE `tanarok`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- Megkötések a kiírt táblákhoz

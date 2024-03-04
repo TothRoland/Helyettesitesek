@@ -22,9 +22,19 @@ class Utvonal {
                 echo $helyettesitesek->osszesOsztaly();
                 break;
             }
-            case "kereses": {
-                $teke = new Helyettesitesek();
-                echo $teke->versenyzoKeres($this->erkezettAdatok->nev);
+            case "bejelentkezes": {
+                $helyettesitesek = new Helyettesitesek();
+                echo $helyettesitesek->bejelentkezes($this->erkezettAdatok);
+                break;
+            }
+            case "regisztracio": {
+                $helyettesitesek = new Helyettesitesek();
+                echo $helyettesitesek->regisztracio($this->erkezettAdatok);
+                break;
+            }
+            case "adminverify" : {
+                $helyettesitesek = new Helyettesitesek();
+                echo $helyettesitesek->adminverify();
                 break;
             }
             default: {
