@@ -32,9 +32,19 @@ class Utvonal {
                 echo $helyettesitesek->regisztracio($this->erkezettAdatok);
                 break;
             }
+            case "szerepkor": {
+                $helyettesitesek = new Helyettesitesek();
+                echo $helyettesitesek->szerepkor($this->erkezettAdatok);
+                break;
+            }
             case "adminverify" : {
                 $helyettesitesek = new Helyettesitesek();
                 echo $helyettesitesek->adminverify();
+                break;
+            }
+            case "feltoltes": {
+                $helyettesitesek = new Helyettesitesek();
+                echo $helyettesitesek->feltoltes();
                 break;
             }
             default: {

@@ -29,13 +29,18 @@
         </div>
     </nav>
 
-    <div id="content">
-        <button id="tanarok">Tanárok</button>
-        <div id="eredm"></div>
-        <!--<button id="osztalyok">Osztályok</button>-->
+    <div class="side-content bg-dark">
+        <div id="tanarokOsztalyokSidepanel">
+            <button type="button" class="btn btn-light" id="osztalyok">Osztályok</button>
+            <button type="button" class="btn btn-light" id="tanarok">Tanárok</button>
+            <input type="text" id="kereses" placeholder="Keresés" class="form-control">
+            <div id="eredm"></div>
+        </div>
     </div>
 
-    <!--<button id="test">teszt</button>-->
+    <div class="main-content">
+
+    </div>
 
     <script src="js/index.js"></script>
 </body>

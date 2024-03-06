@@ -14,7 +14,7 @@ async function bejelentkezes(){
     }
     let response = await fetch("../php/index.php/bejelentkezes", settings);
     let data = await response.json();
-    console.log(data);
+    alert(data.valasz);
 }
 
 document.getElementById("jelszoHide").addEventListener("click", hide);

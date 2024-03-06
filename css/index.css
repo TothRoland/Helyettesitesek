@@ -1,0 +1,42 @@
+.side-content {
+    position: fixed;
+    left: 0;
+    top: 57px;
+    height: 100%;
+    width: 400px;
+    padding-top: 20px;
+    color: #fff;
+    overflow-y: auto;
+}
+
+.side-content button {
+    margin: 0 auto;
+}
+
+.side-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+}
+
+.side-content a:hover {
+    background-color: #555;
+}
+
+.main-content {
+    margin-left: 400px;
+    padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .side-content {
+        width: 100%;
+        height: auto;
+        padding-top: 15px;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}
